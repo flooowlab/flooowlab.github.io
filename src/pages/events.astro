@@ -1,16 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
-import { projects } from '../data/projects';
+import { events } from '../data/events';
 ---
 <Base title="Events" description="Events and activities at Flooowlab.">
   <h1>Events</h1>
   <p class="lede">Interactive installations and the systems behind them.</p>
 
-  {projects.map((p) => (
+  {events.map((e) => (
     <article>
-      <h3>{p.title}</h3>
-      <p class="meta">{p.status}{p.tech && ` · ${p.tech.join(', ')}`}</p>
-      <p>{p.summary}</p>
+      <h3>{e.title}</h3>
+      <p class="meta">{e.status}{e.event && ` · ${e.event.join(', ')}`}</p>
+      <p>{e.summary}</p>
     </article>
   ))}
 </Base>
