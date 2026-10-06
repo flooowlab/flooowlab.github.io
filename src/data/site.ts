@@ -5,7 +5,9 @@ export const site = {
   nav: [
     { href: '/', label: 'Home' },
     { href: '/projects/', label: 'Projects' },
-    { href: '/tools/', label: 'Management tools' },
-    { href: '/2co/', label: '2CO 2027' },
+    { href: '/events/', label: 'Events' },
+    { href: '/tools/', label: 'Tools' }
+    /*,
+    { href: '/2co/', label: '2CO 2027' },*/
   ],
 };
