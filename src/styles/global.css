@@ -41,7 +41,7 @@ h1, h2, h3 { line-height: 1.25; }
 h1 { font-size: 2rem; margin: 0 0 0.5rem; }
 h2 { font-size: 1.25rem; margin: 2.5rem 0 0.5rem; }
 h3 { font-size: 1.0625rem; margin: 0; }
-.lede { font-size: min(3rem, 3.4vw); color: var(--fg); position:fixed; top: 35%; right: 50px; line-height:1.2; text-transform:uppercase; font-weight:700; letter-spacing:0.05em; z-index:-2; width: 57em;
+.lede { font-size: 2vw; color: var(--fg); position:fixed; top: calc(50vh - 7vw); right: 50px; line-height:1.2; text-transform:uppercase; font-weight:700; letter-spacing:0.05em; z-index:-2; width: 19em;
     display: block;}
 .meta { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
 
@@ -58,13 +58,6 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--line);
 
 /* Space (px) the particle word keeps clear of at the top and bottom of the screen. */
 .flow-background { --flow-inset-top: 90px; --flow-inset-bottom: 0px; transition:all 0.2s ease-in-out; }
-
-@media (max-width: 1440px) {
-
-  .lede {
-  font-size: 1.5rem;
-  }
-}
 
 /* Phones and narrow windows */
 @media (max-width: 720px) {
