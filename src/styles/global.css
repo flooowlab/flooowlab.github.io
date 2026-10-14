@@ -76,7 +76,7 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--line);
   .flow-background ~ .lede { position: absolute; top: auto; bottom: 8vh; left: 1rem; right: 1rem; margin: 0; }
   .affiliations { position: static; justify-content: center; margin-top: 3rem; }
   .affiliations img { width: 130px; }
-  .flow-background { --flow-inset-top: 170px; --flow-inset-bottom: 200px;   transform: rotate(90deg) scale(1.75); 
+  .flow-background { --flow-inset-top: 170px; --flow-inset-bottom: 200px;   transform: rotate(90deg)
   }
 }
 
