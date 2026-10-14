@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { people } from '../data/people';
+---
+<Base title="People" description="People at Flooowlab.">
+  <h1>People</h1>
+  <p class="lede">People</p>
+
+  {people.map((p) => (
+    <article>
+      <h3>{p.title}</h3>
+      <p class="meta">{p.people && ` · ${p.people.join(', ')}`}</p>
+      <p>{p.summary}</p>
+      <a href={p.website} target="_blank" rel="noopener noreferrer">{p.website}</a>
+    </article>
+  ))}
+</Base>

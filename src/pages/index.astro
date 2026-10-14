@@ -1,13 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
+import FlowBackground from '../components/FlowBackground.astro';
 import { site } from '../data/site';
 import { projects } from '../data/projects';
 import { tools } from '../data/tools';
 ---
 <Base>
-  <h1>{site.name}</h1>
+  <FlowBackground />
+  <!-- <h1>{site.name}</h1> -->
   <p class="lede">{site.tagline}</p>
 
+  <div id="intro">
+    <p>
+      We are a research lab for computational and interactive digital design, based in İzmir,
+      Turkey. We build interactive systems for education and cultural heritage, and we are
+      setting up the facility in İzmir to host that work.
+    </p>
   <p>
     Flooowlab is a lab for computational and interactive digital design. We build interactive
     systems for education and cultural heritage, and we are setting up the facility in İzmir
@@ -35,4 +43,9 @@ import { tools } from '../data/tools';
     We are organizing <strong>Processing Community Day</strong> in İzmir the 26th of October.
     <a href="/events/">Read more</a>.
   </p>
+
+  <div class="affiliations">
+    <img src="/ffad_w.svg" alt="Faculty of Fine Arts and Design" />
+    <img src="/ieu_w.svg" alt="İzmir University of Economics" />
+  </div></div>
 </Base>

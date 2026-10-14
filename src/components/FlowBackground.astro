@@ -1,0 +1,23 @@
+---
+// Full-viewport particle animation drawn behind the page content.
+---
+<canvas class="flow-background" aria-hidden="true"></canvas>
+
+<style>
+  .flow-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+   
+  }
+</style>
+
+<script>
+  import { startFlowBackground } from '../scripts/flow-background';
+
+  const canvas = document.querySelector<HTMLCanvasElement>('canvas.flow-background');
+  if (canvas) startFlowBackground(canvas);
+</script>
