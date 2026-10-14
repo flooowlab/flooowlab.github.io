@@ -132,10 +132,10 @@ export class FlowSimulation {
     this.layout(this.width, this.height);
   }
 
-  /** Resize the simulated area, keeping the word centred in it. */
-  layout(width: number, height: number) {
+  /** Resize the simulated area, keeping the word centred in it (moved down by shiftY). */
+  layout(width: number, height: number, shiftY = 0) {
     const offsetX = (width - SKETCH_WIDTH) / 2;
-    const offsetY = (height - SKETCH_HEIGHT) / 2;
+    const offsetY = (height - SKETCH_HEIGHT) / 2 + shiftY;
     for (let i = 0; i < this.n; i++) {
       this.px[i] += offsetX - this.offsetX;
       this.py[i] += offsetY - this.offsetY;

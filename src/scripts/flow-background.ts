@@ -223,10 +223,15 @@ export function startFlowBackground(canvas: HTMLCanvasElement) {
   function resize() {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    scale = Math.min(vw / SKETCH_WIDTH, vh / SKETCH_HEIGHT);
+    // The word fits between these CSS insets (in px), so it can stay clear of
+    // the header and the tagline at each breakpoint.
+    const style = getComputedStyle(canvas);
+    const insetTop = parseFloat(style.getPropertyValue('--flow-inset-top')) || 0;
+    const insetBottom = parseFloat(style.getPropertyValue('--flow-inset-bottom')) || 0;
+    scale = Math.min(vw / SKETCH_WIDTH, Math.max(vh - insetTop - insetBottom, vh / 3) / SKETCH_HEIGHT);
     const width = vw / scale;
     const height = vh / scale;
-    sim.layout(width, height);
+    sim.layout(width, height, (insetTop - insetBottom) / 2 / scale);
 
     renderer.setSize(vw, vh, false);
     camera.right = width;
@@ -294,6 +299,7 @@ export function startFlowBackground(canvas: HTMLCanvasElement) {
   window.addEventListener('pointermove', movePointer, { passive: true });
   window.addEventListener('pointerdown', movePointer, { passive: true });
   window.addEventListener('pointerup', (e) => e.pointerType !== 'mouse' && clearPointer());
+  window.addEventListener('pointercancel', clearPointer); // e.g. a touch that turns into a scroll
   window.addEventListener('blur', clearPointer);
   document.documentElement.addEventListener('pointerleave', clearPointer);
 

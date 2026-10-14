@@ -41,7 +41,8 @@ h1, h2, h3 { line-height: 1.25; }
 h1 { font-size: 2rem; margin: 0 0 0.5rem; }
 h2 { font-size: 1.25rem; margin: 2.5rem 0 0.5rem; }
 h3 { font-size: 1.0625rem; margin: 0; }
-.lede { font-size: 3rem; color: var(--fg); position:fixed; top: 35%; left: 65%; line-height:1.2; text-transform:uppercase; font-weight:700; letter-spacing:0.05em; z-index:-2}
+.lede { font-size: min(3rem, 3.4vw); color: var(--fg); position:fixed; top: 35%; right: 50px; line-height:1.2; text-transform:uppercase; font-weight:700; letter-spacing:0.05em; z-index:-2; width: 57em;
+    display: block;}
 .meta { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
 
 article { border-top: 1px solid var(--line); padding: 1.25rem 0; }
@@ -53,4 +54,38 @@ footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--line);
 #intro {margin-top:90vh}
 
 .affiliations { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; position: absolute; top: 50px; right: 50px; }
-.affiliations img { display: block; width: 200px; height: auto; }
+.affiliations img { display: block; width: clamp(120px, 14vw, 200px); height: auto; }
+
+/* Space (px) the particle word keeps clear of at the top and bottom of the screen. */
+.flow-background { --flow-inset-top: 90px; --flow-inset-bottom: 0px; transition:all 0.2s ease-in-out; }
+
+@media (max-width: 1440px) {
+
+  .lede {
+  font-size: 1.5rem;
+  }
+}
+
+/* Phones and narrow windows */
+@media (max-width: 720px) {
+  header { margin-bottom: 1.5rem; }
+  nav a { padding: 0.5rem 0.75rem; }
+  /* In the flow on inner pages, so it does not sit over the text. */
+  .lede { position: static; font-size: clamp(1.25rem, 6vw, 2rem); margin: 0 0 2rem; }
+  /* On the homepage: below the particle word, scrolling away with the first screen. */
+  .flow-background ~ .lede { position: absolute; top: auto; bottom: 8vh; left: 1rem; right: 1rem; margin: 0; }
+  .affiliations { position: static; justify-content: center; margin-top: 3rem; }
+  .affiliations img { width: 130px; }
+  .flow-background { --flow-inset-top: 170px; --flow-inset-bottom: 200px;   transform: rotate(90deg) scale(1.75); 
+  }
+}
+
+/* Phones held sideways: shrink the word between the header and a one-line tagline. */
+@media (max-height: 500px) and (orientation: landscape) {
+  header { margin-bottom: 1rem; }
+  .lede { position: static; font-size: 1.25rem; margin: 0 0 2rem; }
+  .flow-background ~ .lede { position: absolute; font-size: 1rem; top: auto; bottom: 0.75rem; left: 1rem; right: 1rem; margin: 0; }
+  .affiliations { position: static; justify-content: center; margin-top: 3rem; }
+  .affiliations img { width: 130px; }
+  .flow-background { --flow-inset-top: 95px; --flow-inset-bottom: 50px; }
+}
