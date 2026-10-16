@@ -35,6 +35,11 @@ export const people: People[] = [
     summary:
       'Buse Anıl is a student assistant at the Visual Communication Design Department at İzmir University of Economics.',
     website: '',
+  },
+  {
+    title: 'Berkin Dündar',
+    summary:
+      'Berkin Dündar is a student assistant at the Visual Communication Design Department at İzmir University of Economics.',
+    website: '',
   }
-  
 ];
