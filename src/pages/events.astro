@@ -8,7 +8,7 @@ import { events } from '../data/events';
 
   {events.map((e) => (
     <article>
-      <h3>{e.title}</h3>
+      <h3>{e.href ? <a href={e.href}>{e.title}</a> : e.title}</h3>
       <p class="meta">{e.status}{e.event && ` · ${e.event.join(', ')}`}</p>
       <p>{e.summary}</p>
     </article>

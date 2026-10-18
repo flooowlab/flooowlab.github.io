@@ -1,4 +1,4 @@
-# Flowlab website
+# Flooowlab website
 
 Astro site for Flowlab, served at https://flooowlab.github.io.
 

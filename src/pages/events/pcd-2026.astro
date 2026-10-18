@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+// The long text lives in Markdown, one file per language.
+import { Content as Turkish } from '../../content/events/pcd-2026/tr.md';
+import { Content as English } from '../../content/events/pcd-2026/en.md';
+---
+<Base
+  title="Processing Community Day İzmir 2026"
+  description="Processing Community Day in İzmir, 26 October 2026."
+>
+  <img
+    class="poster"
+    src="/pcd2026_3840x2160.webp"
+    alt="Poster: Processing Community Day İzmir, 26.10.2026, 12.00–18.30. Talks, exhibitions, workshops."
+    width="3840"
+    height="2160"
+  />
+
+  <div class="panel">
+  <h1>Processing Community Day İzmir 2026</h1>
+  <p class="meta">26 Ekim / October 2026 · 12.00–18.30 · İzmir</p>
+
+  <p class="languages"><a href="#tr">Türkçe</a> · <a href="#en">English</a></p>
+
+  <section id="tr" lang="tr">
+    <h2>Türkçe</h2>
+    <Turkish />
+  </section>
+
+  <section id="en" lang="en">
+    <h2>English</h2>
+    <English />
+  </section>
+
+  <p><a href="/events/">← All events</a></p>
+  </div>
+</Base>
