@@ -19,6 +19,14 @@
   }
 }
 
+::selection {
+    background: rgb(38, 0, 145);
+}
+
+::-moz-selection {
+    background: rgb(38, 0, 145);
+}
+
 body {
   margin: 0 auto;
   padding: 1.5rem 1rem 4rem;
@@ -46,7 +54,9 @@ h3 { font-size: 1.0625rem; margin: 0; }
 .meta { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0.5rem; }
 
 article { border-top: 1px solid var(--line); padding: 1.25rem 0; }
-article p { margin: 0.25rem 0; text-shadow: 2px 0px 12px black; }
+p { margin: 0.25rem 0; text-shadow: 2px 0px 12px black;}
+h1,h2,h3,p{background: linear-gradient(to right, rgba(38, 0, 145, 0.8), rgba(38, 0, 145, 0.8)); 
+   padding: 0.25rem; display: inline}
 ul { padding-left: 1.25rem; }
 
 footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
